@@ -3,7 +3,7 @@ class Profile:
         self.user_name = user_name
         self.birthday = {'month': None, 'day': None, 'year': None}
         self.sizes = {'shirt': None, 'pants':'Mshoes': None, 'Wshoes': None, }
-        self.allergies = []
+        self.allergies = ['1']
         self.color = ()##tuple with RGB value
         self.hobbies = []
 
@@ -25,7 +25,7 @@ class Profile:
             if allergy not in self.allergies:
                 self.allergies.append(allergy)
             else:
-                raise("allergy already shown")
+                raise("allergy already known")
         elif action = 'drop':
             if allergy in self.allergies:
                 self.allergies.remove(allergy)
@@ -37,6 +37,8 @@ class Profile:
     def set_color(self, color):
         if color.is_tuple():
             self.color = color
+        else:
+            raise('color should be an RGB tuple')
 
     def change_hobbies(self, action, hobby):
         if action = 'add':
@@ -51,4 +53,7 @@ class Profile:
                 raise('hobby does not need to be dropped')
         else:
             raise('action must be "add" or "drop"')
+
+
+
 
